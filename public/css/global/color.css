@@ -1,0 +1,79 @@
+.colorPrimary {
+    color: #343E50
+}
+
+.secondaryColor {
+    color: #57666B
+}
+
+.tertiaryColor {
+    color: #FFFFFF
+}
+
+.quaternaryColor {
+    color: #1E1E1E
+}
+
+.quinaryColor {
+    color: #5E697D
+}
+
+.senaryColor {
+    color: #D9D9D9
+}
+
+.septenaryColor {
+    color: #495366
+}
+
+.octonaryColor {
+    color: #999FAB
+}
+
+.nonaryColor {
+    color: #2A3539
+}
+
+.decenaryColor {
+    color: #1D2021
+}
+
+.backgroundColorPrimary {
+    background-color: #343E50;
+}
+
+.backgroundColorSecondary {
+    background-color: #57666B;
+}
+
+.backgroundColorTertiary {
+    background-color: #FFFFFF;
+}
+
+.backgroundColorQuaternary {
+    background-color: #1E1E1E;
+}
+
+.backgroundColorQuinary {
+    background-color: #5E697D;
+}
+
+.backgroundColorSenary {
+    background-color: #D9D9D9;
+}
+
+.backgroundColorSeptary {
+    background-color: #495366;
+}
+
+.backgroundColorOctonary {
+    background-color: #999FAB;
+}
+
+.backgroundColorNonary {
+    background-color: #2A3539;
+}
+
+.backgroundColorDecenary {
+    background-color: #1D2021;
+}
