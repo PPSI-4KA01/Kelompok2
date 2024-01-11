@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'nama',
         'password',
+        'email',
+        'gambar',
     ];
 
     /**
@@ -41,4 +42,73 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+
+    public function getIdAkun(){
+        return $this->attributes['id'];
+    }
+
+    public function setIdAkun($idAkun){
+        $this->attributes['id'] = $idAkun;
+    }
+
+    public function getNama(){
+        return $this->attributes['nama'];
+    }
+
+    public function setNama($nama){
+        $this->attributes['nama'] = $nama;
+    }
+
+    public function getPassword(){
+        return $this->attributes['password'];
+    }
+
+    public function setPassword($password){
+        $this->attributes['password'] = $password;
+    }
+
+    public function getEmail(){
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email){
+        $this->attributes['email'] = $email;
+    }
+
+    public function getGambar(){
+        return $this->attributes['gambar'];
+    }
+
+    public function setGambar($gambar){
+        $this->attributes['gambar'] = $gambar;
+    }
+
+    public function getRole()
+    {
+    return $this->attributes['role'];
+    }
+
+    public function setRole($role)
+    {
+    $this->attributes['role'] = $role;
+    }
+
+    public function getBuat(){
+        return $this->attributes['created_at'];
+    }
+    
+    public function setBuat($created_at){
+        $this->attributes['created_at'] = $created_at;
+    }
+    
+    public function getUpdate(){
+        return $this->attributes['updated_at'];
+    }
+    
+    public function setUpdate($updated_at){
+        $this->attributes['updated_at'] = $updated_at;
+    }
 }

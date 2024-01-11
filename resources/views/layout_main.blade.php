@@ -75,7 +75,7 @@
     <link href="{{ asset('css/global/color.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body style="overflow-x: hidden">
 
     {{-- Start Navigation Bar --}}
     <div class="no-margin">
@@ -89,17 +89,24 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor"
+                    <li class="nav-item"><a href="/" class="nav-link tertiaryColor"
                             aria-current="page">BERANDA</a>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor">TENTANG KAMI</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor">GALERI</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor">LAYANAN</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor">POST</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link tertiaryColor">HUBUNGI KAMI</a></li>
+                    <li class="nav-item"><a href="{{ route('index') }}#tentang" class="nav-link tertiaryColor">TENTANG
+                            KAMI</a></li>
+                    <li class="nav-item"><a href="{{ route('user.galeri') }}" class="nav-link tertiaryColor">GALERI</a>
+                    </li>
+                    <li class="nav-item"><a href="{{ route('index') }}#layanan"
+                            class="nav-link tertiaryColor">LAYANAN</a></li>
+                    <li class="nav-item"><a href="{{ route('user.berita') }}" class="nav-link tertiaryColor">BERITA</a>
+                    </li>
+                    <li class="nav-item"><a href="{{ route('user.pesan') }}" class="nav-link tertiaryColor">HUBUNGI
+                            KAMI</a></li>
                 </ul>
             </header>
         </div>
+
+        @yield('content')
     </div>
 
     <script src="{{ asset('js/bootstrap_5/bootstrap.bundle.min.js') }}"></script>
