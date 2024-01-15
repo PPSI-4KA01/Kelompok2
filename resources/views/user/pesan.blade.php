@@ -57,61 +57,94 @@
             <!-- Field 7 -->
             <div class="mb-3">
                 <label for="paket_konstruksi" class="form-label">Paket Konstruksi</label>
-                <input type="text" id="paket_konstruksi" class="form-control" name="paket_konstruksi"
-                    placeholder="Paket Konstruksi" required autofocus>
-                @if ($errors->has('paket_konstruksi'))
-                    <span class="text-danger">{{ $errors->first('paket_konstruksi') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="paket_konstruksi">
+                        <option selected>Pilih Satu</option>
+                        <option value="1">Paket 1</option>
+                        <option value="2">Paket 2</option>
+                        <option value="3">Paket 3</option>
+                        <option value="4">Paket 4</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Field 8 -->
             <div class="mb-3">
                 <label for="jenis_bangunan" class="form-label">Jenis Bangunan</label>
-                <input type="text" id="jenis_bangunan" class="form-control" name="jenis_bangunan"
-                    placeholder="Jenis Bangunan" required autofocus>
-                @if ($errors->has('jenis_bangunan'))
-                    <span class="text-danger">{{ $errors->first('jenis_bangunan') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="jenis_bangunan">
+                        <option selected>Pilih Satu</option>
+                        <option value="1">Bangunan 1</option>
+                        <option value="2">Bangunan 2</option>
+                        <option value="3">Bangunan 3</option>
+                        <option value="4">Bangunan 4</option>
+                    </select>
+
+                </div>
             </div>
 
             <!-- Field 9 -->
             <div class="mb-3">
                 <label for="jumlah_lantai" class="form-label">Jumlah Lantai</label>
-                <input type="text" id="jumlah_lantai" class="form-control" name="jumlah_lantai"
-                    placeholder="Jumlah Lantai" required autofocus>
-                @if ($errors->has('jumlah_lantai'))
-                    <span class="text-danger">{{ $errors->first('jumlah_lantai') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="jumlah_lantai">
+                        <option selected>Pilih Satu</option>
+                        <option value="1">1 (satu) lantai</option>
+                        <option value="2">2 (dua) lantai</option>
+                        <option value="3">3 (tiga) lantai</option>
+                        <option value="4">4 (empat) lantai</option>
+                    </select>
+
+                </div>
             </div>
 
             <!-- Field 10 -->
             <div class="mb-3">
                 <label for="jumlah_bangunan" class="form-label">Jumlah Bangunan</label>
-                <input type="text" id="jumlah_bangunan" class="form-control" name="jumlah_bangunan"
-                    placeholder="Jumlah Bangunan" required autofocus>
-                @if ($errors->has('jumlah_bangunan'))
-                    <span class="text-danger">{{ $errors->first('jumlah_bangunan') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="jumlah_bangunan">
+                        <option selected>Pilih Satu</option>
+                        <option value="1">1 (satu) bangunan</option>
+                        <option value="2">2 (dua) bangunan</option>
+                        <option value="3">3 (tiga) bangunan</option>
+                        <option value="4">4 (empat) bangunan</option>
+                    </select>
+
+                </div>
             </div>
 
             <!-- Field 11 -->
             <div class="mb-3">
                 <label for="rencana_pembangunan" class="form-label">Rencana Pembangunan</label>
-                <input type="text" id="rencana_pembangunan" class="form-control" name="rencana_pembangunan"
-                    placeholder="Rencana Pembangunan" required autofocus>
-                @if ($errors->has('rencana_pembangunan'))
-                    <span class="text-danger">{{ $errors->first('rencana_pembangunan') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="rencana_pembangunan">
+                        <option selected>Pilih Satu</option>
+                        <option value="Bangun Baru">Bangun Baru</option>
+                        <option value="Renovasi">Renovasi</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Field 12 -->
             <div class="mb-3">
                 <label for="konsep_style" class="form-label">Konsep Style</label>
-                <input type="text" id="konsep_style" class="form-control" name="konsep_style"
-                    placeholder="Konsep Style" required autofocus>
-                @if ($errors->has('konsep_style'))
-                    <span class="text-danger">{{ $errors->first('konsep_style') }}</span>
-                @endif
+                <div class="input-group">
+                    <select class="form-select" aria-label="Default select example" class="col-lg-10 col-md-6 col-sm-12"
+                        name="konsep_style">
+                        <option selected>Pilih Satu</option>
+                        <option value="Minimalis Modern">Minimalis Modern</option>
+                        <option value="Modern Kontemporer">Modern Kontemporer</option>
+                        <option value="Modern Mediterania">Modern Mediterania</option>
+                        <option value="Rumah Klasik">Rumah Klasik</option>
+                        <option value="Rumah Kolonial">Rumah Kolonial</option>
+                    </select>
+
+                </div>
             </div>
 
             <!-- Field 13 -->

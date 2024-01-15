@@ -12,11 +12,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link href={{ asset('css/bootstrap_5/all.min.css') }} rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/css_extra/all.min.css') }}">
     <!-- icheck bootstrap -->
-    <link href={{ asset('css/bootstrap_5/icheck-bootstrap.min.css') }} rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
-    <link href={{ asset('css/bootstrap_5/adminlte.min.css') }} rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/css_extra/adminlte.min.css') }}">
 </head>
 
 <body class="hold-transition login-page">

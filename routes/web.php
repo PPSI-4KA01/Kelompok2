@@ -34,9 +34,16 @@ Route::middleware('admin')->group(function(){
     Route::get('/tampil-berita', [AdminController::class, 'tampilBerita'])->name("admin.pages.tampil_berita");
     Route::post('/post-galeri', [AdminController::class, 'postGaleri'])->name("galeri.post");
     Route::post('/post-berita', [AdminController::class, 'postBerita'])->name("berita.post");
+    Route::delete('/tampil-berita/{idBerita}/delete', [AdminController::class, 'deleteBerita'])->name("berita.delete");
+    Route::delete('/tampil-galeri/{idGaleri}/delete', [AdminController::class, 'deleteGaleri'])->name("galeri.delete");
+    Route::get('/edit-berita/{idBerita}', [AdminController::class, 'editBerita'])->name("admin.pages.edit_berita");
+    Route::put('/edit-berita/{idBerita}/update', [AdminController::class, 'updateBerita'])->name("berita.update");
+    Route::get('/edit-galeri/{idGaleri}', [AdminController::class, 'editGaleri'])->name("admin.pages.edit_galeri");
+    Route::put('/edit-galeri/{idGaleri}/update', [AdminController::class, 'updateGaleri'])->name("galeri.update");
 });
 
 Route::get('/login', [AuthController::class, 'index'])->name('admin.auth.login');
 Route::post('/post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
 Route::get('/dashboard', [AuthController::class, 'dashboard']); 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/redirecrWA', [HomeController::class, 'redirectWA'])->name('redirect');

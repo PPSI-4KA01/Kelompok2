@@ -18,37 +18,24 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    // public function index(){
-    //     return view('index');
-    // }
 
     public function tampilGaleri(){
         $viewData["galeri"] = Galeri::all();
+        $viewData['title'] = "Kelola Galeri";
         return view('admin.pages.tampil_galeri')->with("viewData", $viewData);
     }
 
-    // public function galeriDetail(){
-    //     return view('user.galeriDetail');
-    // }
-
     public function tampilBerita(){
         $viewData["berita"] = Berita::all();
+        $viewData['title'] = "Kelola Berita";
         return view('admin.pages.tampil_berita')->with("viewData", $viewData);
     }
 
-    // public function beritaDetail(){
-    //     return view('user.beritaDetail');
-    // }
-
     public function tampilPesan(){
         $viewData["pesan"] = Pesan::all();
+        $viewData['title'] = "Kelola Pesan";
         return view('admin.pages.tampil_pesan')->with("viewData", $viewData);
     }
-
-    // Perlu Implementasi
-    // public function kelolaPesan($id){
-        
-    // }
 
     public function postGaleri(Request $request){
 
@@ -94,22 +81,63 @@ class AdminController extends Controller
         return redirect("tampil-berita")->withSuccess('Galeri berhasil dibuat');
     }
 
-    // public function createBerita(array $data){
-    //     return Pesan::create([
-    //         'nama_pengirim' => $data['nama_pengirim'],
-    //         'alamat_domisili' => $data['alamat_domisili'],
-    //         'alamat_tanah' => $data['alamat_tanah'],
-    //         'no_hp' => $data['no_hp'],
-    //         'email_pengirim' => $data['email_pengirim'],
-    //         'paket_konstruksi' => $data['paket_konstruksi'],
-    //         'jenis_bangunan' => $data['jenis_bangunan'],
-    //         'jumlah_lantai' => $data['jumlah_lantai'],
-    //         'jumlah_bangunan' => $data['jumlah_bangunan'],
-    //         'rencana_pembangunan' => $data['rencana_pembangunan'],
-    //         'konsep_style' => $data['konsep_style'],
-    //         'luas_tanah' => $data['luas_tanah'],
-    //         'rencana_luas_bangunan' => $data['rencana_luas_bangunan'],
-    //         'pesan_tambahan' => $data['pesan_tambahan'],
-    //     ]);
-    // }
+    public function deleteBerita($idBerita){
+        Berita::destroy($idBerita);
+        return back();
+    }
+
+    public function deleteGaleri($idGaleri){
+        Galeri::destroy($idGaleri);
+        return back();
+    }
+
+    public function editBerita($idBerita){
+        $viewData = [];
+        $viewData['title'] = "Edit Berita";
+        $viewData["berita"] = Berita::findOrFail($idBerita);
+        return view('admin.pages.edit_berita')->with("viewData", $viewData); 
+    }
+
+    public function editGaleri($idGaleri){
+        $viewData = [];
+        $viewData['title'] = "Edit Galeri";
+        $viewData["galeri"] = Galeri::findOrFail($idGaleri);
+        return view('admin.pages.edit_galeri')->with("viewData", $viewData); 
+    }
+
+    public function updateBerita(Request $request, $idBerita){
+        
+        $berita = Berita::findOrFail($idBerita);
+        $berita->setJudulBerita($request->input('nama'));
+        $berita->setIsiBerita($request->input('isi'));
+        if ($request->hasFile('gambar')) {
+        $imageName = $berita->getIdBerita()."_berita.".$request->file('gambar')->extension();
+        Storage::disk('public')->put(
+        $imageName,
+        file_get_contents($request->file('gambar')->getRealPath())
+        );
+        $berita->setGambarBerita($imageName);
+        }
+        $berita->save();
+        return redirect()->route('admin.pages.tampil_berita');
+    }
+
+    public function updateGaleri(Request $request, $idGaleri){
+
+        $galeri = Galeri::findOrFail($idGaleri);
+        $galeri->setNamaProjek($request->input('nama_projek'));
+        $galeri->setJenisProjek($request->input('jenis_projek'));
+        $galeri->setDeskripsiGaleri($request->input('deskripsi'));
+        $galeri->setIsiGaleri($request->input('isi'));
+        if ($request->hasFile('gambar')) {
+        $imageName = $galeri->getIdGaleri()."_galeri.".$request->file('gambar')->extension();
+        Storage::disk('public')->put(
+        $imageName,
+        file_get_contents($request->file('gambar')->getRealPath())
+        );
+        $galeri->setGambarGaleri($imageName);
+        }
+        $galeri->save();
+        return redirect()->route('admin.pages.tampil_galeri');
+    }
 }

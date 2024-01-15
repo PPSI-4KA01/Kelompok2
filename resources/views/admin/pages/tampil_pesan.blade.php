@@ -1,4 +1,5 @@
 @extends('admin.layout_admin')
+@section('title', $viewData['title'])
 @section('content')
     {{-- Akhir Membuat program Donasi --}}
 
@@ -16,8 +17,7 @@
                         <th scope="col">No Handphone</th>
                         <th scope="col">Email Pengirim</th>
                         <th scope="col">Pesan</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Lihat Detail</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,17 +32,8 @@
                             <td>
                                 <a class="btn btn-primary" href="{{-- {{ route('admin.program.edit', ['id' => $programdonasi->getId()]) }} --}}#">
                                     <i class="bi-pencil"></i>
+                                    <p>belum fully implemented</p>
                                 </a>
-
-                            </td>
-                            <td>
-                                <form action="{{-- {{ route('admin.program.delete', $programdonasi->getId()) }} --}}#" method="POST">
-                                    @csrf
-                                    {{-- @method('DELETE') --}}
-                                    <button class="btn btn-danger">
-                                        <i class="bi-trash"></i>
-                                    </button>
-                                </form>
 
                             </td>
                         </tr>

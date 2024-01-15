@@ -45,8 +45,11 @@ class AuthController extends Controller
         ]);
    
         $credentials = $request->only('email', 'password');
+            
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('galeri')
+            // $viewData = [];
+            // $viewData['title'] = "Dashboard Admin";
+            return redirect()->intended('admin.pages.dashboard')
                         ->withSuccess('You have Successfully loggedin');
         }
   
@@ -79,8 +82,10 @@ class AuthController extends Controller
      */
     public function dashboardAdmin()
     {
+
         if(Auth::check()){
             return view('admin.pages.dashboard');
+            
         }
   
         return redirect("login")->withSuccess('Opps! You do not have access');

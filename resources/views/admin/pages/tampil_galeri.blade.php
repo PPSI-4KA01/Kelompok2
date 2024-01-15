@@ -1,4 +1,5 @@
 @extends('admin.layout_admin')
+@section('title', $viewData['title'])
 @section('content')
     <div class="card mb-4">
         <div class="card-header">
@@ -19,16 +20,25 @@
                         <div class="mb-3 row">
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nama Projek:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="nama_projek" type="text" class="form-control">
+                                <input name="nama_projek" type="text" class="form-control"
+                                    placeholder="Proyex XX | Pembangunan Rumah XX">
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Jenis Projek:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="jenis_projek" type="text" class="form-control">
-                            </div>
+                        <div class="input-group">
+
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label input-group-text">Jenis
+                                Projek:</label>
+                            <select class="form-select" aria-label="Default select example"
+                                class="col-lg-10 col-md-6 col-sm-12" name="jenis_projek">
+                                <option selected>Pilih Satu</option>
+                                <option value="1">Arsitektur</option>
+                                <option value="2">Pembangunan dan Renovasi Rumah</option>
+                                <option value="3">Desain Rumah</option>
+                                <option value="4">Manajemen</option>
+                            </select>
+
                         </div>
                     </div>
                 </div>
@@ -98,13 +108,14 @@
                             <td><img src="{{ asset('/storage/' . $galeri->getGambarGaleri()) }}"
                                     class="card-img-top img-card" title="{{ $galeri->getGambarGaleri() }}"></td>
                             <td>
-                                <a class="btn btn-primary" href="#">
+                                <a class="btn btn-primary"
+                                    href="{{ route('admin.pages.edit_galeri', ['idGaleri' => $galeri->getIdGaleri()]) }}">
                                     <i class="bi-pencil"></i>
                                 </a>
 
                             </td>
                             <td>
-                                <form action="#" method="POST">
+                                <form action="{{ route('galeri.delete', $galeri->getIdGaleri()) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">

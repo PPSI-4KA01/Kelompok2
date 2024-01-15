@@ -66,4 +66,7 @@ class HomeController extends Controller
         ]);
     }
     
+    public function redirectWA(){
+        return redirect('https://wa.me/6281283159755');
+    }
 }

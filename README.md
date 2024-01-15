@@ -1,6 +1,6 @@
 # Kelompok2
 Repository Tugas Pengelolaan Proyek Sistem Informasi Kelompok 2 
-Website Profil Perusahaan PT Akmal Pratama Gemilang
+Website Profil Perusahaan Vasa Studio
 
 Kelas : 4KA01
 Anggota Kelompok:

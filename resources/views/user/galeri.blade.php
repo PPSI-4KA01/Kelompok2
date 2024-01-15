@@ -6,7 +6,7 @@
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <h1 class="fw-light quaternaryColor">Projek</h1>
-                        <p class="lead quaternaryColor"><b class="fw-bolder">PT. Akmal Pratama Gemilang</b> telah
+                        <p class="lead quaternaryColor"><b class="fw-bolder">Vasa Studio</b> telah
                             mengerjakan berbagai
                             projek konstruksi dengan penuh dedikasi dan kualitas unggul, menjadi mitra terpercaya
                             bagi klien-klien kami</p>

@@ -67,6 +67,28 @@
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
+
+        #changeOnHover1 div {
+            background: #D9D9D9;
+            /* color: #00a651; */
+            text-align: center;
+        }
+
+        #changeOnHover1 div:hover {
+            background: #495366;
+            /* color: #ffffff; */
+        }
+
+        #changeOnHover2 div {
+            background: #495366;
+            /* color: #00a651; */
+            text-align: center;
+        }
+
+        #changeOnHover2 div:hover {
+            background: #D9D9D9;
+            /* color: #ffffff; */
+        }
     </style>
 
 
@@ -85,7 +107,7 @@
                     class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                     <img src="{{ asset('images/logo_1.png') }}" alt="" class="bi me-2" width="40"
                         height="40">
-                    <span class="fs-4">PT. AKMAL PRATAMA GEMILANG</span>
+                    <span class="fs-4">VASA STUDIO</span>
                 </a>
 
                 <ul class="nav nav-pills">

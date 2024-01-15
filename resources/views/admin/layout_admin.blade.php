@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/global/color.css') }}" rel="stylesheet" />
-    <title>Dashboard Admin</title>
+    <title>@yield('title', 'Dashboard Admin')</title>
 </head>
 
 <body>
     <div class="row g-0">
         <!-- sidebar -->
-        <div class="d-flex flex-column flex-shrink-0 backgroundColorQuaternary" style="width: 4.5rem; height: 100vh;">
+        <div class="d-flex flex-column flex-shrink-0 backgroundColorQuaternary sticky-top"
+            style="width: 4.5rem; height: 100vh;">
             <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" title=""
                 data-bs-toggle="tooltip" data-bs-placement="right">
                 <img src="{{ asset('images/logo_1.png') }}" alt="" class="bi me-2" width="40"
@@ -68,7 +69,7 @@
         </div>
         <!-- sidebar -->
         <div class="col content-grey">
-            <nav class="navbar navbar-expand-lg p-3 backgroundColorQuaternary">
+            <nav class="navbar navbar-expand-lg p-3 backgroundColorQuaternary sticky-top">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -76,31 +77,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ms-auto">
-                            <div class="vr bg-white mx-3 d-none d-lg-block"></div>
-                            <div class="btn-group">
-                                <button type="button" class="btn bg-light dropdown-toggle" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <img class="img-profile rounded-circle" height="24" src="#">
-                                    {{ Auth::user()->nama }}
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Profile</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Admin Page</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li>
-                                        <form id="logout" action="{{ route('logout') }}" method="POST">
-                                            <a role="button" class="nav-link active"
-                                                onclick="document.getElementById('logout').submit();">Logout</a>
-                                            @csrf
-                                        </form></a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="navbar-nav ms-auto mb-5">
                         </div>
                     </div>
                 </div>
@@ -115,7 +92,7 @@
         style="background-color:#1E1E1E;text-align: center;width: 100%">
         <div class="container">
             <small>
-                <strong>Copyright &copy; 2022 PT Akmal Pratama Gemilang</a>.</strong> All rights reserved.
+                <strong>Copyright &copy; 2023 Vasa Studio</a>.</strong> All rights reserved.
             </small>
         </div>
         <div style="height: 5px"></div>
