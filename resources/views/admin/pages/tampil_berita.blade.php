@@ -39,7 +39,7 @@
                         <div class="mb-3 row">
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Isi Berita:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <textarea name="" id="" rows="10" class="form-control"></textarea>
+                                <textarea name="isi_berita" id="" rows="10" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

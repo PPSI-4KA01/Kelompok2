@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\pesan;
-use App\Models\galeri;
-use App\Models\berita;
+use App\Models\Pesan;
+use App\Models\Galeri;
+use App\Models\Berita;
 
 class HomeController extends Controller
 {
@@ -32,8 +32,11 @@ class HomeController extends Controller
         return view('user.berita')->with("viewData", $viewData);
     }
 
-    public function beritaDetail(){
-        return view('user.beritaDetail');
+    public function beritaDetail($idBerita){
+        $viewData = [];
+        $berita = Berita::findOrFail($idBerita);
+        $viewData["berita"] = $berita;
+        return view('user.beritaDetail')->with("viewData", $viewData);
     }
 
     public function pesan(){
@@ -50,18 +53,18 @@ class HomeController extends Controller
     public function createPesan(array $data){
         return Pesan::create([
             'nama_pengirim' => $data['nama_pengirim'],
-            'alamat_domisili' => $data['alamat_domisili'],
-            'alamat_tanah' => $data['alamat_tanah'],
+            // 'alamat_domisili' => $data['alamat_domisili'],
+            // 'alamat_tanah' => $data['alamat_tanah'],
             'no_hp' => $data['no_hp'],
             'email_pengirim' => $data['email_pengirim'],
-            'paket_konstruksi' => $data['paket_konstruksi'],
-            'jenis_bangunan' => $data['jenis_bangunan'],
-            'jumlah_lantai' => $data['jumlah_lantai'],
-            'jumlah_bangunan' => $data['jumlah_bangunan'],
-            'rencana_pembangunan' => $data['rencana_pembangunan'],
-            'konsep_style' => $data['konsep_style'],
-            'luas_tanah' => $data['luas_tanah'],
-            'rencana_luas_bangunan' => $data['rencana_luas_bangunan'],
+            // 'paket_konstruksi' => $data['paket_konstruksi'],
+            // 'jenis_bangunan' => $data['jenis_bangunan'],
+            // 'jumlah_lantai' => $data['jumlah_lantai'],
+            // 'jumlah_bangunan' => $data['jumlah_bangunan'],
+            // 'rencana_pembangunan' => $data['rencana_pembangunan'],
+            // 'konsep_style' => $data['konsep_style'],
+            // 'luas_tanah' => $data['luas_tanah'],
+            // 'rencana_luas_bangunan' => $data['rencana_luas_bangunan'],
             'pesan_tambahan' => $data['pesan_tambahan'],
         ]);
     }

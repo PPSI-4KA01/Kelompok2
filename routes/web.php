@@ -21,7 +21,7 @@ Route::get('/galeri', [HomeController::class, 'galeri'])->name("user.galeri");
 Route::get('/kontak', [HomeController::class, 'kontak'])->name("user.kontak");
 Route::get('/berita', [HomeController::class, 'berita'])->name("user.berita");
 Route::get('/galeri/{idGaleri}', [HomeController::class, 'galeriDetail'])->name("user.galeriDetail");
-Route::get('/berita/1', [HomeController::class, 'beritaDetail'])->name("user.beritaDetail");
+Route::get('/berita/{idBerita}', [HomeController::class, 'beritaDetail'])->name("user.beritaDetail");
 Route::get('/form-pesan', [HomeController::class, 'pesan'])->name("user.pesan");
 Route::post('/post-pesan', [HomeController::class, 'postPesan'])->name("pesan.post");
 
@@ -32,6 +32,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/tampil-pesan', [AdminController::class, 'tampilPesan'])->name("admin.pages.tampil_pesan");
     Route::get('/tampil-galeri', [AdminController::class, 'tampilGaleri'])->name("admin.pages.tampil_galeri");
     Route::get('/tampil-berita', [AdminController::class, 'tampilBerita'])->name("admin.pages.tampil_berita");
+    Route::get('/lihat-detail-pesan/{idForm}', [AdminController::class, 'lihatDetailPesan'])->name("admin.pages.lihat_detail_pesan");
     Route::post('/post-galeri', [AdminController::class, 'postGaleri'])->name("galeri.post");
     Route::post('/post-berita', [AdminController::class, 'postBerita'])->name("berita.post");
     Route::delete('/tampil-berita/{idBerita}/delete', [AdminController::class, 'deleteBerita'])->name("berita.delete");

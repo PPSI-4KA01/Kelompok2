@@ -30,9 +30,9 @@
                             <td>{{ $pesan->getEmailPengirim() }}</td>
                             <td>{{ $pesan->getPesanTambahan() }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{-- {{ route('admin.program.edit', ['id' => $programdonasi->getId()]) }} --}}#">
-                                    <i class="bi-pencil"></i>
-                                    <p>belum fully implemented</p>
+                                <a class="btn btn-primary"
+                                    href="{{ route('admin.pages.lihat_detail_pesan', ['idForm' => $pesan->getIdForm()]) }}">
+                                    <i class="">Lebih Detail</i>
                                 </a>
 
                             </td>

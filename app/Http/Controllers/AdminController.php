@@ -37,6 +37,13 @@ class AdminController extends Controller
         return view('admin.pages.tampil_pesan')->with("viewData", $viewData);
     }
 
+    public function lihatDetailPesan($idForm){
+        $viewData = [];
+        $viewData['title'] = "Detail Pesan";
+        $viewData["pesan"] = Pesan::findOrFail($idForm);
+        return view('admin.pages.lihat_detail_pesan')->with("viewData", $viewData); 
+    }
+
     public function postGaleri(Request $request){
 
         $galeri = new Galeri();

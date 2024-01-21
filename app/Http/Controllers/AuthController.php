@@ -49,7 +49,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             // $viewData = [];
             // $viewData['title'] = "Dashboard Admin";
-            return redirect()->intended('admin.pages.dashboard')
+            return redirect()->intended('dashboard-admin')
                         ->withSuccess('You have Successfully loggedin');
         }
   

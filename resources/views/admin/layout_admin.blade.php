@@ -77,7 +77,10 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ms-auto mb-5">
+                        <div class="navbar-nav ms-auto">
+                            <a class="btn btn-primary" href="logout">
+                                Logout Button
+                            </a>
                         </div>
                     </div>
                 </div>
